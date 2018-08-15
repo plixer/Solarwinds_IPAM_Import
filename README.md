@@ -23,7 +23,7 @@ Download the compiled binary from /dist onto your server and execute, a prompt f
 
 ## Authors
 
-* **Jake Bergeron (Plixer)** - *Initial work* - [Bergertron](https://github.com/Bergertron)
+* **Jake Bergeron (Plixer)** - *Initial work*
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
