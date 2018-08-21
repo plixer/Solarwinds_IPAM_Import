@@ -12,6 +12,24 @@ import os
 import configparser
 import getpass
 
+def encode(key, string): # Simple password encoding
+    encoded_chars = []
+    for i in range(len(string)):
+        key_c = key[i % len(key)]
+        encoded_c = chr(ord(string[i]) + ord(key_c) % 256)
+        encoded_chars.append(encoded_c)
+    encoded_string = ''.join(encoded_chars)
+    return encoded_string
+
+def decode(key, string): # Simple password decode
+    encoded_chars = []
+    for i in range(len(string)):
+        key_c = key[i % len(key)]
+        encoded_c = chr((ord(string[i]) - ord(key_c) + 256) % 256)
+        encoded_chars.append(encoded_c)
+    encoded_string = ''.join(encoded_chars)
+    return encoded_string
+
 # Create a configuration INI
 config = configparser.ConfigParser()
 try:
@@ -22,7 +40,7 @@ try:
 except BaseException:
     npm_server = input("What is the IP address of the NPM Server: ")
     username = input("What is the username for authentication: ")
-    password = getpass.getpass("What is the password (Will not echo): ")
+    password = encode("scrutinizer",getpass.getpass("What is the password (Will not echo): "))
     config.add_section('solarwinds')
     config.set('solarwinds', 'npm_server', npm_server)
     config.set('solarwinds', 'username', username)
@@ -39,7 +57,7 @@ except BaseException:
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
             requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         # Connect to the NPM server
-        swis = SwisClient(npm_server, username, password)
+        swis = SwisClient(npm_server, username, decode("scrutinizer",password))
         # Using the SWIS module query the display name from SW IPAM module
         print("Querying Solarwinds...:")
         results = swis.query(
