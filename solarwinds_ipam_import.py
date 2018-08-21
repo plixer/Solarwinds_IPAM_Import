@@ -81,3 +81,4 @@ except BaseException:
             writer = csv.writer(csvfile)
             writer.writerow(networks)
 GetGroups()
+
