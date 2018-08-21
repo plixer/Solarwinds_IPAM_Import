@@ -19,7 +19,14 @@ Most of the modules used should be installed with python3 and be installed on th
 
 ## Deployment
 
-Download the compiled binary from /dist onto your server and execute, a prompt for login information will be given and the script should run from there.
+1) SSH into Scrutinizer
+2) Run the following commands:
+**a) wget https://github.com/plixer/Solarwinds_IPAM_Import/raw/master/dist/solarwinds_ipam_import.run
+**b) chmod 755 solarwinds_ipam_import.run
+**c) ./solarwinds_ipam_import.run
+3) Input the NPM Server IP and Username/Password
+4) From here you should see the groups get imported into Scrutinizer.
+5) To reset the configuration you can remove the INI file (.Solarwinds.ini) from the directory where the binary ran and re-run.
 
 ## Authors
 
