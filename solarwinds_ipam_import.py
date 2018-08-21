@@ -12,7 +12,7 @@ import os
 import configparser
 import getpass
 
-def encode(key, string): # Simple password encoding
+def encode(key, string): # Simple password encoding https://stackoverflow.com/questions/2490334
     encoded_chars = []
     for i in range(len(string)):
         key_c = key[i % len(key)]
@@ -21,7 +21,7 @@ def encode(key, string): # Simple password encoding
     encoded_string = ''.join(encoded_chars)
     return encoded_string
 
-def decode(key, string): # Simple password decode
+def decode(key, string): # Simple password decode https://stackoverflow.com/questions/2490334
     encoded_chars = []
     for i in range(len(string)):
         key_c = key[i % len(key)]
