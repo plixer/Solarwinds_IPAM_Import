@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['solarwinds_ipam_import.py'],
+a = Analysis(['solarwinds_ipam_import.run'],
              pathex=['/root/jake'],
              binaries=[],
              datas=[],

@@ -11,6 +11,11 @@ from orionsdk import SwisClient
 import os 
 import configparser
 import getpass
+import socket
+
+# Grab hostname of machine to encode the password
+
+entropy = socket.gethostname()
 
 def encode(key, string): # Simple password encoding https://stackoverflow.com/questions/2490334
     encoded_chars = []
@@ -40,7 +45,7 @@ try:
 except BaseException:
     npm_server = input("What is the IP address of the NPM Server: ")
     username = input("What is the username for authentication: ")
-    password = encode("scrutinizer",getpass.getpass("What is the password (Will not echo): "))
+    password = encode(str(entropy),getpass.getpass("What is the password (Will not echo): "))
     config.add_section('solarwinds')
     config.set('solarwinds', 'npm_server', npm_server)
     config.set('solarwinds', 'username', username)
@@ -57,7 +62,7 @@ except BaseException:
             from requests.packages.urllib3.exceptions import InsecureRequestWarning
             requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
         # Connect to the NPM server
-        swis = SwisClient(npm_server, username, decode("scrutinizer",password))
+        swis = SwisClient(npm_server, username, decode(str(entropy),password))
         # Using the SWIS module query the display name from SW IPAM module
         print("Querying Solarwinds...:")
         results = swis.query(
@@ -81,4 +86,5 @@ except BaseException:
             writer = csv.writer(csvfile)
             writer.writerow(networks)
 GetGroups()
+
 
