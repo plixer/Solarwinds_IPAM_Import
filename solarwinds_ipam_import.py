@@ -3,7 +3,7 @@
 Solarwinds IPAM Import Script
 _AUTHOR: Jake Bergeron <Jakeb@plixer.com>
 _DATE: 8/15/2018
-_VERSION: 1.0
+_VERSION: 1.1
 '''
 # Needed Modules
 import requests
@@ -17,6 +17,11 @@ import socket
 
 entropy = socket.gethostname()
 
+def writeFile(networks):  # write to a new import file
+    import csv
+    with open('/home/plixer/scrutinizer/files/ipgroup_import.csv', 'a+') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(networks)
 
 def encode(key, string):  # Simple password encoding https://stackoverflow.com/questions/2490334
     encoded_chars = []
@@ -84,9 +89,4 @@ except BaseException:
         os.system(
             '/home/plixer/scrutinizer/bin/scrut_util.exe --import ipgroups --reset')
 
-    def writeFile(networks):  # write to a new import file
-        import csv
-        with open('/home/plixer/scrutinizer/files/ipgroup_import.csv', 'a+') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(networks)
 GetGroups()
