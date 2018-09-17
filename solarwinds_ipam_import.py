@@ -85,7 +85,7 @@ except BaseException:
                 name = row['DisplayName']
                 network = str(row['Address'] + '/' + str(row['CIDR']))
                 networks = name, network
-            writeFile(networks)
+            writeFile(sorted(set(networks)))
         os.system(
             '/home/plixer/scrutinizer/bin/scrut_util.exe --import ipgroups --reset')
 
