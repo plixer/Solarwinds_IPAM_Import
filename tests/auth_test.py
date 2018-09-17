@@ -10,6 +10,7 @@ import requests
 import getpass
 import requests
 import json
+import datetime as datetime
 
 def _json_serial(obj):
     """JSON serializer for objects not serializable by default json code"""
@@ -60,9 +61,9 @@ class SwisClient:
         # try to extract reason from response when request returns error
         if 400 <= resp.status_code < 600:
             try:
-                resp.reason = json.loads(resp.text)['Message'];
+                resp.reason = json.loads(resp.text)['Message']
             except:
-                pass;
+                pass
 			 
         resp.raise_for_status()
         return resp
