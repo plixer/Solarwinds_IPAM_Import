@@ -90,3 +90,4 @@ except BaseException:
             '/home/plixer/scrutinizer/bin/scrut_util.exe --import ipgroups --reset')
 
 GetGroups()
+

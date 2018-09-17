@@ -1,18 +1,15 @@
-missing module named 'org.python' - imported by pickle, /root/jake/solarwinds_ipam_import.run, xml.sax
-missing module named ce - imported by os, /root/jake/solarwinds_ipam_import.run
-excluded module named _frozen_importlib - imported by importlib, /root/jake/solarwinds_ipam_import.run
-missing module named _winreg - imported by platform, requests.utils, /root/jake/solarwinds_ipam_import.run
+missing module named 'org.python' - imported by pickle, /root/jake/solarwinds_ipam_import.py, xml.sax
+excluded module named _frozen_importlib - imported by importlib, /root/jake/solarwinds_ipam_import.py
+missing module named _winreg - imported by platform, requests.utils, /root/jake/solarwinds_ipam_import.py
 missing module named _scproxy - imported by urllib.request
-missing module named java - imported by platform, /root/jake/solarwinds_ipam_import.run
-missing module named 'java.lang' - imported by platform, /root/jake/solarwinds_ipam_import.run, xml.sax._exceptions
-missing module named vms_lib - imported by platform, /root/jake/solarwinds_ipam_import.run
-missing module named msvcrt - imported by subprocess, getpass, /root/jake/solarwinds_ipam_import.run
-missing module named _winapi - imported by subprocess, /root/jake/solarwinds_ipam_import.run
-missing module named winreg - imported by platform, mimetypes, urllib.request, requests.utils, /root/jake/solarwinds_ipam_import.run
-missing module named _sha1 - imported by hashlib, /root/jake/solarwinds_ipam_import.run
-missing module named _md5 - imported by hashlib, /root/jake/solarwinds_ipam_import.run
-missing module named _sha256 - imported by hashlib, /root/jake/solarwinds_ipam_import.run
-missing module named _sha512 - imported by hashlib, /root/jake/solarwinds_ipam_import.run
+missing module named java - imported by platform, /root/jake/solarwinds_ipam_import.py
+missing module named 'java.lang' - imported by platform, /root/jake/solarwinds_ipam_import.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, /root/jake/solarwinds_ipam_import.py
+missing module named winreg - imported by platform, mimetypes, urllib.request, requests.utils, /root/jake/solarwinds_ipam_import.py
+missing module named _sha1 - imported by hashlib, /root/jake/solarwinds_ipam_import.py
+missing module named _md5 - imported by hashlib, /root/jake/solarwinds_ipam_import.py
+missing module named _sha256 - imported by hashlib, /root/jake/solarwinds_ipam_import.py
+missing module named _sha512 - imported by hashlib, /root/jake/solarwinds_ipam_import.py
 missing module named urllib.getproxies_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass_environment - imported by urllib, requests.compat
 missing module named urllib.proxy_bypass - imported by urllib, requests.compat
@@ -22,10 +19,13 @@ missing module named urllib.unquote_plus - imported by urllib, requests.compat
 missing module named urllib.quote_plus - imported by urllib, requests.compat
 missing module named urllib.unquote - imported by urllib, requests.compat
 missing module named urllib.quote - imported by urllib, requests.compat
-missing module named _dummy_threading - imported by dummy_threading, /root/jake/solarwinds_ipam_import.run
-missing module named nt - imported by os, ntpath, shutil, /root/jake/solarwinds_ipam_import.run
-missing module named org - imported by copy, /root/jake/solarwinds_ipam_import.run
-missing module named 'requests.packages.urllib3' - imported by /root/jake/solarwinds_ipam_import.run
+missing module named nt - imported by os, ntpath, shutil, /root/jake/solarwinds_ipam_import.py
+missing module named ce - imported by os, /root/jake/solarwinds_ipam_import.py
+missing module named msvcrt - imported by subprocess, getpass, /root/jake/solarwinds_ipam_import.py
+missing module named _winapi - imported by subprocess, /root/jake/solarwinds_ipam_import.py
+missing module named _dummy_threading - imported by dummy_threading, /root/jake/solarwinds_ipam_import.py
+missing module named org - imported by copy, /root/jake/solarwinds_ipam_import.py
+missing module named 'requests.packages.urllib3' - imported by /root/jake/solarwinds_ipam_import.py
 missing module named backports - imported by urllib3.packages.ssl_match_hostname
 missing module named _abcoll - imported by urllib3.packages.ordered_dict
 missing module named dummy_thread - imported by urllib3.packages.ordered_dict
